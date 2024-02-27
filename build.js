@@ -52,6 +52,8 @@ fs.writeFileSync(
 // @description  Simple Fix for HKU Moodle
 // @author       nohackjustnoobb
 // @match        https://moodle.hku.hk/*
+// @downloadURL  https://raw.githubusercontent.com/nohackjustnoobb/HKU-Moodle-Tweaks/master/build/HKU%20Moodle%20Tweaks.user.js
+// @updateURL    https://raw.githubusercontent.com/nohackjustnoobb/HKU-Moodle-Tweaks/master/build/HKU%20Moodle%20Tweaks.user.js
 // ==/UserScript==
 
 const script = document.createElement("script");
