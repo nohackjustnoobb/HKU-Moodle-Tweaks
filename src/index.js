@@ -24,3 +24,4 @@ document.body.appendChild(fromHTML("{{settings}}"));
 coursesFilterOnchange();
 toggleUselessComponents(false);
 toggleCourseImages(false);
+toggleRandomUITweaks(false);

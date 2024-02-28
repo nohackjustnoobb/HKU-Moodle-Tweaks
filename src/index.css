@@ -31,9 +31,9 @@
   max-width: 500px;
   max-height: 400px;
   border-radius: 1rem;
-  padding: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 #hmt-settings .container h2 {
@@ -63,11 +63,16 @@
   margin: 0;
 }
 
+#hmt-settings .container button {
+  border-radius: 0.5rem;
+}
+
 #hmt-courses-list {
   overflow-y: scroll;
   height: 8rem;
   align-items: start !important;
 }
+
 #hmt-courses-list ul {
   width: 100%;
 }
@@ -75,4 +80,118 @@
 #hmt-courses-list ul li {
   display: flex;
   justify-content: space-between;
+}
+
+.hmt-style #frontpage-course-list {
+  padding: 0;
+}
+
+.hmt-style #frontpage-course-list h2 {
+  margin: 0;
+}
+
+.hmt-style #block-region-side-post .block {
+  border-radius: 1rem;
+  background-color: #e6f5f2;
+}
+
+.hmt-style #inst3 > div > #instance-3-header {
+  text-align: center;
+}
+
+.hmt-style #inst3 > div > #instance-3-header::before {
+  display: none;
+}
+
+.hmt-style #inst3 > div > div {
+  padding-top: 0;
+}
+
+.hmt-style #inst3 div[data-region="day-content"] ul {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.hmt-style #inst3 div[data-region="day-content"] li {
+  background-color: #00b48d;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hmt-style #inst3 .calendar_event_course {
+  background-color: transparent;
+}
+
+.hmt-style #inst3 thead {
+  background-color: #bae8df;
+}
+
+.hmt-style .coursebox {
+  padding: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
+.hmt-style .coursebox .content {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .hmt-style .coursebox .content {
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.hmt-style .coursebox .content .courseimage {
+  flex-shrink: 0;
+}
+
+.hmt-style .coursebox .content .teachers {
+  display: none;
+}
+
+.hmt-style .course-btn {
+  flex-shrink: 0;
+}
+
+.hmt-style .course-btn .btn {
+  border-radius: 0.5rem;
+}
+
+.hmt-style #sidebar img.icon {
+  display: none;
+}
+
+.hmt-style #sidebar .unlist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hmt-style #sidebar #instance-476784-header {
+  text-align: center;
+}
+
+.hmt-style #sidebar #instance-476784-header::before {
+  display: none;
+}
+
+.hmt-style .btn.icons-collapse-expand.stretched-link {
+  background-color: transparent !important;
+}
+
+.hmt-style .btn.icons-collapse-expand.stretched-link:hover {
+  background-color: transparent !important;
+}
+
+.hmt-style .btn.icons-collapse-expand.stretched-link:focus {
+  outline: none;
 }

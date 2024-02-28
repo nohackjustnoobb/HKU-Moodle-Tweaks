@@ -1,7 +1,7 @@
 // Detect the current page
 const pageRegex = {
   homepage: /^https:\/\/moodle\.hku\.hk\/?#?$/,
-  courseView: /^https:\/\/moodle\.hku\.hk\/course\/view\.php\?id=.*$/,
+  courseView: /^https:\/\/moodle\.hku\.hk\/course\/view\.php\?id=.*$/, // currently useless
 };
 
 let currPage = null;
@@ -44,6 +44,14 @@ function toggleUselessComponents(toggle = true) {
     useless.push(...Array(...items).slice(0, -1));
   }
 
+  // Random empty block
+  const emptyBlock = document.getElementById("page-header-nav");
+  if (emptyBlock) useless.push(emptyBlock);
+
+  // Random line break
+  const lineBreak = document.querySelector("#region-main > div > br");
+  if (lineBreak) useless.push(lineBreak);
+
   // Page specific
   if (currPage) {
     switch (currPage) {
@@ -82,8 +90,6 @@ function toggleUselessComponents(toggle = true) {
         const myCourses = document.querySelector("div.paging.paging-morelink");
         if (myCourses) useless.push(myCourses);
 
-        break;
-      case "courseView":
         break;
     }
   }
@@ -124,6 +130,17 @@ function toggleCourseImages(toggle = true) {
     if (option) image.classList.add("hmt-hide");
     else image.classList.remove("hmt-hide");
   }
+}
+
+function toggleRandomUITweaks(toggle = true) {
+  // Update the checkbox
+  let option = localStorage.getItem("hmt-random-ui-tweaks") === "1";
+  if (toggle) option = !option;
+  localStorage.setItem("hmt-random-ui-tweaks", option ? "1" : "0");
+  document.getElementById("hmt-random-ui-tweaks").checked = option;
+
+  if (option) document.body.classList.add("hmt-style");
+  else document.body.classList.remove("hmt-style");
 }
 
 function coursesFilterOnchange(select) {
