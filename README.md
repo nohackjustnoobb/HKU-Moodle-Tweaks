@@ -18,6 +18,8 @@ If you are using Chrome or Firefox, install the [Tampermonkey](https://www.tampe
 
 After installing the userscript, you can find that there is an extra option called "Tweaks" under the logout button. Click on it and adjust the settings.
 
+![preview](https://i.imgur.com/dsttM7b.png)
+
 ## Build
 
 ```bash

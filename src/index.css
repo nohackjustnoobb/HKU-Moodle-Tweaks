@@ -31,9 +31,10 @@
   max-width: 500px;
   max-height: 400px;
   border-radius: 1rem;
-  padding: 2rem;
+  padding-top: 2rem;
   padding-left: 3rem;
   padding-right: 3rem;
+  padding-bottom: 1rem;
 }
 
 #hmt-settings .container h2 {

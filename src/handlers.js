@@ -118,13 +118,14 @@ function toggleCourseImages(toggle = true) {
 
   // Get all the course images and apply the settings
   const images = [];
-  if (currPage === "homepage")
-    images.push(
-      ...document.getElementsByClassName("courseimage"),
-      ...document
-        .querySelector("#frontpage-course-list > div")
-        .getElementsByTagName("img")
-    );
+  if (currPage === "homepage") {
+    const courseImages = document.getElementsByClassName("courseimage");
+    if (courseImages.length) images.push(...courseImages);
+
+    let imgElem = document.querySelector("#frontpage-course-list > div");
+    if (imgElem) imgElem = imgElem.getElementsByTagName("img");
+    if (imgElem.length) images.push(...imgElem);
+  }
 
   for (const image of images) {
     if (option) image.classList.add("hmt-hide");

@@ -3,7 +3,7 @@
 // @version      Dev
 // @description  Simple Fix for HKU Moodle
 // @author       nohackjustnoobb
-// @match        https://moodle.hku.hk/*
+// @match        *://moodle.hku.hk/*
 // @grant        GM_addElement
 // ==/UserScript==
 
