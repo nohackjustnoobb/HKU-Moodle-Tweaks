@@ -144,6 +144,17 @@ async function toggleRandomUITweaks(toggle = true) {
   else document.body.classList.remove("hmt-style");
 }
 
+async function toggleDarkTheme(toggle = true) {
+  // Update the checkbox
+  let option = (await GM.getValue("hmt-dark-theme")) === "1";
+  if (toggle) option = !option;
+  await GM.setValue("hmt-dark-theme", option ? "1" : "0");
+  document.getElementById("hmt-dark-theme").checked = option;
+
+  if (option) document.documentElement.classList.add("hmt-style");
+  else document.documentElement.classList.remove("hmt-style");
+}
+
 async function coursesFilterOnchange(select) {
   const option = select
     ? select.value

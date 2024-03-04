@@ -44,6 +44,9 @@ coursesFilter.addEventListener("change", (e) =>
   coursesFilterOnchange(e.target)
 );
 
+const darkTheme = document.getElementById("hmt-dark-theme");
+darkTheme.addEventListener("click", toggleDarkTheme);
+
 const close = document.getElementById("hmt-close");
 close.addEventListener("click", toggleSettings);
 
@@ -52,3 +55,4 @@ coursesFilterOnchange();
 toggleUselessComponents(false);
 toggleCourseImages(false);
 toggleRandomUITweaks(false);
+toggleDarkTheme(false);

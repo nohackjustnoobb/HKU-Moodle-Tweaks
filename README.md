@@ -8,6 +8,7 @@ A simple extension to enhance the HKU Moodle user experience.
 - <b>Consistent Layout</b>: Remove course images for a uniform appearance, ensuring visual coherence across the platform.
 - <b>Visual Refinement</b>: Implement aesthetic adjustments to improve overall page presentation.
 - <b>Semester-Focused Display</b>: Display only the courses relevant to the current semester, enhancing navigation efficiency.
+- <b>Dark Theme Support</b>: Enjoy a comfortable viewing experience with the dark theme option, reducing eye strain during extended usage.
 
 ## Installation
 

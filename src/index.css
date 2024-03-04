@@ -201,3 +201,13 @@
 .hmt-style .btn.icons-collapse-expand.stretched-link:focus {
   outline: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  html.hmt-style,
+  html.hmt-style img:not(.activityicon),
+  html.hmt-style img.nofilter,
+  html.hmt-style video,
+  html.hmt-style iframe {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+}
