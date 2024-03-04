@@ -1,6 +1,13 @@
 # HKU Moodle Tweaks
 
-A simple extension to make HKU Moodle more user-friendly.
+A simple extension to enhance the HKU Moodle user experience.
+
+### 🌟 Key Features
+
+- <b>Streamlined Interface</b>: Conceal unnecessary components to declutter the interface, promoting a more efficient browsing experience.
+- <b>Consistent Layout</b>: Remove course images for a uniform appearance, ensuring visual coherence across the platform.
+- <b>Visual Refinement</b>: Implement aesthetic adjustments to improve overall page presentation.
+- <b>Semester-Focused Display</b>: Display only the courses relevant to the current semester, enhancing navigation efficiency.
 
 ## Installation
 

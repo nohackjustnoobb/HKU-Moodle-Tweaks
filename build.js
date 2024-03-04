@@ -36,9 +36,9 @@ let indexCSS = fs.readFileSync("./src/index.css", "utf8");
 indexCSS += css;
 
 // Minify index.js and index.css
-const minifiedJS =
-  (await JSminify(fs.readFileSync("./src/handlers.js", "utf8"))).code +
-  (await minify.js(indexJs));
+const minifiedJS = (
+  await JSminify(fs.readFileSync("./src/handlers.js", "utf8") + indexJs)
+).code;
 const minifiedCSS = await minify.css(indexCSS);
 
 if (!fs.existsSync("./build")) fs.mkdirSync("./build");
@@ -54,14 +54,14 @@ fs.writeFileSync(
 // @match        https://moodle.hku.hk/*
 // @downloadURL  https://raw.githubusercontent.com/nohackjustnoobb/HKU-Moodle-Tweaks/master/build/HKU%20Moodle%20Tweaks.user.js
 // @updateURL    https://raw.githubusercontent.com/nohackjustnoobb/HKU-Moodle-Tweaks/master/build/HKU%20Moodle%20Tweaks.user.js
+// @grant        GM.setValue
+// @grant        GM.getValue
 // ==/UserScript==
 
-const script = document.createElement("script");
-script.innerText = "${escaper(minifiedJS)}";
-document.body.appendChild(script)
+${minifiedJS}
 
-const style = document.createElement("style");
-style.innerText = "${escaper(minifiedCSS)}";
-document.body.appendChild(style)
+const s = document.createElement("style");
+s.innerText = "${escaper(minifiedCSS)}";
+document.body.appendChild(s)
 `
 );

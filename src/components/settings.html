@@ -1,35 +1,23 @@
 <div id="hmt-settings" class="hmt-hide">
-  <div class="background" onclick="toggleSettings()"></div>
+  <div class="background"></div>
   <div class="container">
     <h2>HKU Moodle Tweaks</h2>
     <ul>
       <li>
         <div>Hide useless components:</div>
-        <input
-          type="checkbox"
-          id="hmt-hide-useless-components"
-          onclick="toggleUselessComponents()"
-        />
+        <input type="checkbox" id="hmt-hide-useless-components" />
       </li>
       <li>
         <div>Hide course images:</div>
-        <input
-          type="checkbox"
-          id="hmt-hide-course-images"
-          onclick="toggleCourseImages()"
-        />
+        <input type="checkbox" id="hmt-hide-course-images" />
       </li>
       <li>
         <div>Random UI tweaks:</div>
-        <input
-          type="checkbox"
-          id="hmt-random-ui-tweaks"
-          onclick="toggleRandomUITweaks()"
-        />
+        <input type="checkbox" id="hmt-random-ui-tweaks" />
       </li>
       <li>
         <div>Courses filter:</div>
-        <select id="hmt-courses-filter" onchange="coursesFilterOnchange(this)">
+        <select id="hmt-courses-filter">
           <option value="0">Disabled</option>
           <option value="1">Auto Detect</option>
           <option value="2">Auto Detect (Aggressive)</option>
@@ -38,7 +26,7 @@
       </li>
       <li id="hmt-courses-list" class="hmt-hide"></li>
     </ul>
-    <button onclick="toggleSettings()">Close</button>
+    <button id="hmt-close">Close</button>
     <div id="source">
       This extension is
       <a

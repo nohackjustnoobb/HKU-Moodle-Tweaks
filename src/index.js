@@ -16,9 +16,36 @@ function fromHTML(html) {
 const menu = document.getElementById("action-menu-0-menu");
 if (menu) {
   menu.appendChild(fromHTML("{{divider}}"));
-  menu.appendChild(fromHTML("{{menu}}"));
+
+  const item = fromHTML("{{menu}}");
+  menu.appendChild(item);
+
+  item.addEventListener("click", toggleSettings);
 }
-document.body.appendChild(fromHTML("{{settings}}"));
+
+const settings = fromHTML("{{settings}}");
+document.body.appendChild(settings);
+
+// attach the event listeners
+const bg = settings.getElementsByClassName("background")[0];
+bg.addEventListener("click", toggleSettings);
+
+const hideUseless = document.getElementById("hmt-hide-useless-components");
+hideUseless.addEventListener("click", toggleUselessComponents);
+
+const hideImg = document.getElementById("hmt-hide-course-images");
+hideImg.addEventListener("click", toggleCourseImages);
+
+const randomUITweaks = document.getElementById("hmt-random-ui-tweaks");
+randomUITweaks.addEventListener("click", toggleRandomUITweaks);
+
+const coursesFilter = document.getElementById("hmt-courses-filter");
+coursesFilter.addEventListener("change", (e) =>
+  coursesFilterOnchange(e.target)
+);
+
+const close = document.getElementById("hmt-close");
+close.addEventListener("click", toggleSettings);
 
 // Restore the settings
 coursesFilterOnchange();

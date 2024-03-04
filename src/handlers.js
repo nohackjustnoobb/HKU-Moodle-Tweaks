@@ -15,11 +15,11 @@ function toggleSettings() {
 
 const calendarOnChange = () => toggleUselessComponents(false);
 
-function toggleUselessComponents(toggle = true) {
+async function toggleUselessComponents(toggle = true) {
   // Update the checkbox
-  let option = localStorage.getItem("hmt-hide-useless-components") === "1";
+  let option = (await GM.getValue("hmt-hide-useless-components")) === "1";
   if (toggle) option = !option;
-  localStorage.setItem("hmt-hide-useless-components", option ? "1" : "0");
+  await GM.setValue("hmt-hide-useless-components", option ? "1" : "0");
   document.getElementById("hmt-hide-useless-components").checked = option;
 
   const useless = [];
@@ -109,11 +109,11 @@ function toggleUselessComponents(toggle = true) {
   }
 }
 
-function toggleCourseImages(toggle = true) {
+async function toggleCourseImages(toggle = true) {
   // Update the checkbox
-  let option = localStorage.getItem("hmt-hide-course-images") === "1";
+  let option = (await GM.getValue("hmt-hide-course-images")) === "1";
   if (toggle) option = !option;
-  localStorage.setItem("hmt-hide-course-images", option ? "1" : "0");
+  await GM.setValue("hmt-hide-course-images", option ? "1" : "0");
   document.getElementById("hmt-hide-course-images").checked = option;
 
   // Get all the course images and apply the settings
@@ -133,22 +133,22 @@ function toggleCourseImages(toggle = true) {
   }
 }
 
-function toggleRandomUITweaks(toggle = true) {
+async function toggleRandomUITweaks(toggle = true) {
   // Update the checkbox
-  let option = localStorage.getItem("hmt-random-ui-tweaks") === "1";
+  let option = (await GM.getValue("hmt-random-ui-tweaks")) === "1";
   if (toggle) option = !option;
-  localStorage.setItem("hmt-random-ui-tweaks", option ? "1" : "0");
+  await GM.setValue("hmt-random-ui-tweaks", option ? "1" : "0");
   document.getElementById("hmt-random-ui-tweaks").checked = option;
 
   if (option) document.body.classList.add("hmt-style");
   else document.body.classList.remove("hmt-style");
 }
 
-function coursesFilterOnchange(select) {
+async function coursesFilterOnchange(select) {
   const option = select
     ? select.value
-    : localStorage.getItem("hmt-courses-filter") || "0";
-  localStorage.setItem("hmt-courses-filter", option);
+    : (await GM.getValue("hmt-courses-filter")) || "0";
+  await GM.setValue("hmt-courses-filter", option);
   document.getElementById("hmt-courses-filter").value = option;
 
   let filters = [];
@@ -186,7 +186,7 @@ function coursesFilterOnchange(select) {
   }
 
   // Get the filters list from the local storage
-  const manualFilters = (localStorage.getItem("hmt-filters") || "").split("|");
+  const manualFilters = ((await GM.getValue("hmt-filters")) || "").split("|");
 
   // Update and hide the courses list
   const list = document.getElementById("hmt-courses-list");
@@ -202,9 +202,9 @@ function coursesFilterOnchange(select) {
         checkbox.type = "checkbox";
         checkbox.setAttribute("courseId", course.id);
         checkbox.checked = !manualFilters.find((v) => v === course.id);
-        checkbox.addEventListener("change", (e) => {
+        checkbox.addEventListener("change", async (e) => {
           const id = e.target.getAttribute("courseId");
-          let manualFilters = (localStorage.getItem("hmt-filters") || "").split(
+          let manualFilters = ((await GM.getValue("hmt-filters")) || "").split(
             "|"
           );
 
@@ -212,7 +212,7 @@ function coursesFilterOnchange(select) {
             manualFilters = manualFilters.filter((v) => v !== id);
           else if (!manualFilters.find((v) => v === id)) manualFilters.push(id);
 
-          localStorage.setItem("hmt-filters", manualFilters.join("|"));
+          await GM.setValue("hmt-filters", manualFilters.join("|"));
           coursesFilterOnchange();
         });
 
