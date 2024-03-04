@@ -223,7 +223,7 @@ async function coursesFilterOnchange(select) {
       }
       list.appendChild(ul);
     } else {
-      for (const course of document.getElementsByTagName("input"))
+      for (const course of list.getElementsByTagName("input"))
         course.checked = !manualFilters.find(
           (v) => v === course.getAttribute("courseId")
         );

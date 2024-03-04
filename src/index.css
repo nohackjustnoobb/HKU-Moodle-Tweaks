@@ -30,6 +30,7 @@
   background-color: white;
   max-width: 500px;
   max-height: 400px;
+  margin: 1rem;
   border-radius: 1rem;
   padding-top: 2rem;
   padding-left: 3rem;
@@ -66,6 +67,10 @@
 
 #hmt-settings .container button {
   border-radius: 0.5rem;
+}
+
+#hmt-settings #source {
+  text-align: center;
 }
 
 #hmt-courses-list {
