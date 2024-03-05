@@ -1,125 +1,39 @@
-#hmt-settings {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
 .hmt-hide {
   display: none !important;
 }
 
-#hmt-settings .background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  background-color: black;
-  opacity: 0.25;
-}
-
-#hmt-settings .container {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  max-width: 500px;
-  max-height: 400px;
-  margin: 1rem;
-  border-radius: 1rem;
-  padding-top: 2rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-bottom: 1rem;
-}
-
-#hmt-settings .container h2 {
-  text-align: center;
-  margin: 0;
-}
-
-#hmt-settings .container ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding: 0;
-  gap: 0.5rem;
-}
-
-#hmt-settings .container ul li {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-#hmt-settings .container button,
-#hmt-settings .container select {
-  margin: 0;
-}
-
-#hmt-settings .container button {
-  border-radius: 0.5rem;
-}
-
-#hmt-settings #source {
-  text-align: center;
-}
-
-#hmt-courses-list {
-  overflow-y: scroll;
-  height: 8rem;
-  align-items: start !important;
-}
-
-#hmt-courses-list ul {
-  width: 100%;
-}
-
-#hmt-courses-list ul li {
-  display: flex;
-  justify-content: space-between;
-}
-
-.hmt-style #frontpage-course-list {
+body.hmt-style #frontpage-course-list {
   padding: 0;
 }
 
-.hmt-style #frontpage-course-list h2 {
+body.hmt-style #frontpage-course-list h2 {
   margin: 0;
 }
 
-.hmt-style #block-region-side-post .block {
+body.hmt-style #block-region-side-post .block {
   border-radius: 1rem;
   background-color: #e6f5f2;
 }
 
-.hmt-style #inst3 > div > #instance-3-header {
+body.hmt-style #inst3 > div > #instance-3-header {
   text-align: center;
 }
 
-.hmt-style #inst3 > div > #instance-3-header::before {
+body.hmt-style #inst3 > div > #instance-3-header::before {
   display: none;
 }
 
-.hmt-style #inst3 > div > div {
+body.hmt-style #inst3 > div > div {
   padding-top: 0;
 }
 
-.hmt-style #inst3 div[data-region="day-content"] ul {
+body.hmt-style #inst3 div[data-region="day-content"] ul {
   display: flex;
   justify-content: center;
   gap: 0.25rem;
 }
 
-.hmt-style #inst3 div[data-region="day-content"] li {
+body.hmt-style #inst3 div[data-region="day-content"] li {
   background-color: #00b48d;
   height: 0.5rem;
   width: 0.5rem;
@@ -128,22 +42,22 @@
   line-height: 0;
 }
 
-.hmt-style #inst3 .calendar_event_course {
+body.hmt-style #inst3 .calendar_event_course {
   background-color: transparent;
 }
 
-.hmt-style #inst3 thead {
+body.hmt-style #inst3 thead {
   background-color: #bae8df;
 }
 
-.hmt-style .coursebox {
+body.hmt-style .coursebox {
   padding: 1rem;
   padding-left: 0;
   padding-right: 0;
   margin: 0;
 }
 
-.hmt-style .coursebox .content {
+body.hmt-style .coursebox .content {
   display: flex;
   align-items: center;
 }

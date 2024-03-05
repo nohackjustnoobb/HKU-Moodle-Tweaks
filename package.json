@@ -1,6 +1,6 @@
 {
   "name": "hku-moodle-tweaks",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "main": "build.js",
   "type": "module",
   "author": "nohackjustnoobb",
