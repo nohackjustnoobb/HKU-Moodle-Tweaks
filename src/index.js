@@ -13,7 +13,9 @@ function fromHTML(html) {
 }
 
 // Inject the settings for this application
-const menu = document.getElementById("action-menu-0-menu");
+const menu =
+  document.getElementById("action-menu-0-menu") ||
+  document.getElementById("carousel-item-main");
 if (menu) {
   menu.appendChild(fromHTML("{{divider}}"));
 

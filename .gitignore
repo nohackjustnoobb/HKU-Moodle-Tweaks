@@ -2,6 +2,8 @@ build/index.*
 
 node_modules
 
+.vscode
+
 yarn.lock
 
 ### macOS ###

@@ -63,6 +63,8 @@
 
 #hmt-settings .container button {
   border-radius: 0.5rem;
+  color: white;
+  border: none;
 }
 
 #hmt-settings #source {
