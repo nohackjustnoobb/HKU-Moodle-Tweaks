@@ -44,11 +44,7 @@ async function toggleUselessComponents(toggle = true) {
     useless.push(...Array(...items).slice(0, -1));
   }
 
-  // Random empty block
-  const emptyBlock = document.getElementById("page-header-nav");
-  if (emptyBlock) useless.push(emptyBlock);
-
-  // Random line break
+  // Toggle Random line break
   const lineBreak = document.querySelector("#region-main > div > br");
   if (lineBreak) useless.push(lineBreak);
 
@@ -66,6 +62,10 @@ async function toggleUselessComponents(toggle = true) {
         // Toggle security info
         const security = document.getElementById("inst477633");
         if (security) useless.push(security);
+
+        // Toggle Random empty block
+        const emptyBlock = document.getElementById("page-header-nav");
+        if (emptyBlock) useless.push(emptyBlock);
 
         // Toggle new event button
         const newEvent = document.querySelector(
