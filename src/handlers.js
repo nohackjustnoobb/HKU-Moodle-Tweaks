@@ -168,7 +168,7 @@ async function coursesFilterOnchange(select) {
 
   // Extract the course element
   const coursesElem = document.querySelectorAll(
-    "#inst476784 > div > div > ul > li > div > a"
+    "div.courses.frontpage-course-list-enrolled > div.coursebox > div.info > h3.coursename > a"
   );
 
   // Extract course info from the element
@@ -178,14 +178,18 @@ async function coursesFilterOnchange(select) {
       id: /^https:\/\/moodle\.hku\.hk\/course\/view\.php\?id=(.*)$/.exec(
         elem.getAttribute("href")
       )[1],
-      title: elem.getAttribute("title"),
+      title: elem.textContent,
     };
 
-    const groups = /^(.*)_(\w{0,3})_(\d{4})$/.exec(course.title);
+    const groups = /(.*?) .*?\[(.*)(\d{4}).*?\]/.exec(course.title);
     if (groups) {
       course["code"] = groups[1];
-      course["sem"] = Number(groups[2][0]);
       course["year"] = Number(groups[3]);
+
+      if (groups[2]) {
+        const semGroup = /(\d)/.exec(groups[2]);
+        if (semGroup) course["sem"] = Number(semGroup[1]);
+      }
 
       if (course.year >= maxYear) {
         if (course.sem > maxSem) maxSem = course.sem;
@@ -276,16 +280,16 @@ async function coursesFilterOnchange(select) {
     else course.classList.remove("hmt-hide");
   }
 
-  const sideCoursesList = document.querySelectorAll(
-    "#inst476784 > div > div > ul > li"
-  );
-  for (const course of sideCoursesList) {
-    if (
-      filters.find(
-        (v) => v.title === course.children[0].children[0].getAttribute("title")
-      )
-    )
-      course.classList.add("hmt-hide");
-    else course.classList.remove("hmt-hide");
-  }
+  // const sideCoursesList = document.querySelectorAll(
+  //   "#inst476784 > div > div > ul > li"
+  // );
+  // for (const course of sideCoursesList) {
+  //   if (
+  //     filters.find(
+  //       (v) => v.title === course.children[0].children[0].getAttribute("title")
+  //     )
+  //   )
+  //     course.classList.add("hmt-hide");
+  //   else course.classList.remove("hmt-hide");
+  // }
 }
