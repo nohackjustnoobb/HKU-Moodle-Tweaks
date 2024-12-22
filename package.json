@@ -1,13 +1,13 @@
 {
   "name": "hku-moodle-tweaks",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "main": "build.js",
   "type": "module",
   "author": "nohackjustnoobb",
   "license": "MIT",
   "scripts": {
     "build": "node build.js",
-    "start": "nodemon --exec 'yarn build && servor build' --watch src -e js,css,html"
+    "dev": "nodemon --exec 'yarn build && servor build' --watch src -e js,css,html"
   },
   "dependencies": {
     "js-string-escape": "^1.0.1",
